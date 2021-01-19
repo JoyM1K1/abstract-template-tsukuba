@@ -1,0 +1,80 @@
+% 独自のコマンド
+
+% ■ 謝辞
+%  \begin{acknowledgment} 〜 \end{acknowledgment}
+
+% ■ 文献リスト
+%  \begin{bib}[100] 〜 \end{bib}
+
+
+\newif\ifjapanese
+
+\japanesetrue  % 論文全体を日本語で書く（英語で書くならコメントアウト）
+
+\ifjapanese
+  \documentclass[a4j,twocolumn,11pt,dvipdfmx]{ujarticle} % 両面印刷の場合。余白を綴じ側に作って右起こし。
+  %\documentclass[a4j,11pt,dvipdfmx]{ujreport}                  % 片面印刷の場合。
+\else
+  \documentclass[a4paper,11pt]{report}
+  \newcommand{\acknowledgmentname}{Acknowledgment}
+\fi
+
+% packages
+\usepackage{thesis}
+\usepackage{ascmac}
+\usepackage{amsmath, amsfonts, mathrsfs} % 筆記体:mathcal, 花文字:mathscr
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage[top=2.5cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{macro}
+
+% \bibliographystyle{jplain}
+
+% 画像のpath
+\graphicspath{{../graphics/}}
+
+\newcommand{\kintou}[2]{%
+\leavevmode
+\hbox to #1{%
+\kanjiskip=0pt plus 1fill minus 1fill
+\xkanjiskip=\kanjiskip
+#2}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\twocolumn[
+  \begin{center}
+    {\large 数理物質研究科　修士論文概要}
+  \end{center}
+  \begin{flushright}
+    \begin{minipage}{0.35\textwidth}
+      \begin{flushleft}
+        \kintou{4zw}{専攻名}  \quad 専攻名\\
+        \kintou{4zw}{学籍番号} \quad 学籍番号\\
+        \kintou{4zw}{学生氏名} \quad 学生氏名\\
+        \kintou{4zw}{学位名}  \quad 修士(理学)\\
+        \kintou{4zw}{指導教員} \quad 教員氏名　印
+      \end{flushleft}
+    \end{minipage}
+  \end{flushright}
+  \begin{center}
+    {\large 修士論文題目　題目題目題目題目題目題目題目}
+  \end{center}
+  \quad
+  ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．
+  \\
+]
+
+ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．ここに概要．
+
+% 参考文献がある場合は記述
+% \bibliographystyle{junsrt}
+% \bibliography{main}
+\end{document}

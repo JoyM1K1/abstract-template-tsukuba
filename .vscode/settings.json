@@ -1,0 +1,70 @@
+{
+    "[latex]": {
+        "editor.formatOnSave": false,
+        "editor.tabSize": 2,
+    },
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "compile",
+            "tools": [
+                "make"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "make",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-v",
+                "%DIR%/..:%DIR%/..",
+                "-w",
+                "%DIR%/..",
+                "joym1k1/uplatex-compiler:apple-silicon",
+                "make"
+            ]
+        }
+    ],
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.synctex.synctexjs.enabled": true,
+    "latex-workshop.latex.outDir": "%DIR%/../out",
+    "git.enableSmartCommit": true,
+    // "todo.embedded.providers.ag.regex": "(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!|%) *(TODO|FIXME|FIX|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)",
+    "todo.embedded.regex": "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!|%) *(TODO|FIXME|FIX|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:?(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))",
+    "todohighlight.keywords": [
+        {
+            "text": "DEBUG:",
+            "color": "#FFFFFF",
+            "backgroundColor": "#dd5706"
+        },
+        {
+            "text": "NOTE:",
+            "color": "#FFFFFF",
+            "backgroundColor": "#2741a0"
+        },
+        {
+            "text": "HACK:",
+            "color": "#FFFFFF",
+            "backgroundColor": "#a0275d"
+        },
+        {
+            "text": "TODO:",
+            "color": "#FFF",
+            "backgroundColor": "#30730f"
+        },
+        {
+            "text": "FIXME",
+            "color": "#FFF",
+            "backgroundColor": "#e808ab"
+        }
+    ],
+    "todohighlight.defaultStyle": {
+        "isWholeLine": true
+    },
+}
